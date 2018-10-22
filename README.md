@@ -2,30 +2,36 @@
 CLOS (Common Lisp Object System) JavaScript Implementation
 
 
+*defclass* to define the class:
+
+> defclass()( slots, ...);
+
+`let Gender = defclass()("gender");`
+
+let Gender = defclass()("gender");
+
 ```
-> let Gender = defclass()("gender");
+let Gender = defclass()("gender");
 
-> let Man = Gender("man");
+let Man = Gender("man");
 
-> let Woman = Gender("woman");
+let Woman = Gender("woman");
 
-> let Nationality = defclass()("nation");
+let Nationality = defclass()("nation");
 
-> let Chinese = Nationality("chinese");
+let Chinese = Nationality("chinese");
 
-> let Secretary = defclass(Chinese, Woman)("name", "age");
+let Secretary = defclass(Chinese, Woman)("name", "age");
 
-> let Worker = defclass(Chinese, Man)("name", "age");
+let Worker = defclass(Chinese, Man)("name", "age");
 
-> let lucy = Secretary("lucy", 16);
+let lucy = Secretary("lucy", 16);
 
-> lucy
+lucy
 { nation: 'chinese', gender: 'woman', name: 'lucy', age: 16 }
 
-> let sam = Worker("sam",32);
+let sam = Worker("sam",32);
 
-> sam
-{ nation: 'chinese', gender: 'man', name: 'sam', age: 32 }
-
-> 
+sam
+{ nation: 'chinese', gender: 'man', name: 'sam', age: 32 } 
 ```
