@@ -38,3 +38,13 @@ sam
 lucy
 { nation: 'chinese', gender: 'woman', name: 'lucy', age: 16 }
 ```
+
+***slot-ref***
+```
+lucy.gender;
+'woman'
+sam.age;
+'32'
+```
+
+***Method***
