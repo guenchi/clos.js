@@ -8,14 +8,20 @@ CLOS (Common Lisp Object System) JavaScript Implementation
 
 `let Gender = defclass()("gender");`
 
-let Gender = defclass()("gender");
+instantiate
+
+`class( values, ...);`
+
+`let Woman = Gender("woman");`
+
+inheritance
+
+`defclass()( slots, ...);`
 
 ```
 let Gender = defclass()("gender");
 
-let Man = Gender("man");
 
-let Woman = Gender("woman");
 
 let Nationality = defclass()("nation");
 
