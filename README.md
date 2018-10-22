@@ -2,7 +2,7 @@
 CLOS (Common Lisp Object System) JavaScript Implementation
 
 
-*defclass* to define the class:
+**defclass** to define the class:
 
 > defclass()( slots, ...);
 
