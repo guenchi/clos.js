@@ -7,8 +7,8 @@ CLOS (Common Lisp Object System) JavaScript Implementation
 ```
 defclass()( slots, ...);
 
-let Gender = defclass()("gender");
-let Nationality = defclass()("nation");
+let Gender = defclass()('gender');
+let Nationality = defclass()('nation');
 ```
 
 ***Instantiate***
@@ -16,23 +16,23 @@ let Nationality = defclass()("nation");
 ```
 class( values, ...);
 
-let Man = Gender("man");
-let Woman = Gender("woman");
-let Chinese = Nationality("chinese");
+let Man = Gender('man');
+let Woman = Gender('woman');
+let Chinese = Nationality('chinese');
 ```
 
 ***Inheritance***
 ```
 defclass( supers, ...)( slots, ...);
 
-let Worker = defclass(Chinese, Man)("name", "age");
-let Secretary = defclass(Chinese, Woman)("name", "age");
+let Worker = defclass(Chinese, Man)('name', 'age');
+let Secretary = defclass(Chinese, Woman)('name', 'age');
 ```
 
 ***slot-ref***
 ```
-let sam = Worker("sam",32);
-let lucy = Secretary("lucy", 16);
+let sam = Worker('sam',32);
+let lucy = Secretary('lucy', 16);
 
 lucy.gender;
 > 'woman'
