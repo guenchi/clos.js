@@ -29,7 +29,7 @@ let Worker = defclass(Chinese, Man)('name', 'age');
 let Secretary = defclass(Chinese, Woman)('name', 'age');
 ```
 
-***slot-ref***
+***Slot-ref***
 ```
 let sam = Worker('sam',32);
 let lucy = Secretary('lucy', 16);
