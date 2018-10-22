@@ -1,14 +1,14 @@
 
 
-let defclass = (...o) => (...k) => (...v) => {
-    let x = {};
-    const len = k.length;
-    for(let i in o)
+let defclass = (...s) => (...k) => (...v) => {
+    let o = {};
+    const l = k.length;
+    for(let i in s)
     {
-        Object.assign(x, o[i]);
+        Object.assign(o, s[i]);
     }
-    for(let i=0; i < len; i++) {
-        x[k[i]]=v[i];
+    for(let i=0; i < l; i++) {
+        o[k[i]]=v[i];
     }
-    return x;
+    return o;
 }
