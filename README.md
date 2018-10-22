@@ -29,22 +29,26 @@ let Worker = defclass(Chinese, Man)("name", "age");
 let Secretary = defclass(Chinese, Woman)("name", "age");
 ```
 
+***slot-ref***
 ```
 let sam = Worker("sam",32);
 let lucy = Secretary("lucy", 16);
 
-sam
-{ nation: 'chinese', gender: 'man', name: 'sam', age: 32 } 
-lucy
-{ nation: 'chinese', gender: 'woman', name: 'lucy', age: 16 }
-```
-
-***slot-ref***
-```
 lucy.gender;
-'woman'
+> 'woman'
 sam.age;
-'32'
+> '32'
 ```
 
 ***Method***
+
+```
+let ageOfNextYear = o => o.age + 1;
+let nationChange = (o, n) => o.nation = n;
+
+ageOfNextYear(sam);
+> 33
+nationChange(lucy, 'french');
+lucy.nation;
+> 'french'
+```
