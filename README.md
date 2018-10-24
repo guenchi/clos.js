@@ -16,17 +16,17 @@ let Nationality = defclass()('nation');
 ```
 class( value, ...);
 
-let Man = Gender('man');
-let Woman = Gender('woman');
-let Chinese = Nationality('chinese');
+let man = Gender('man');
+let woman = Gender('woman');
+let chinese = Nationality('chinese');
 ```
 
 ***Inheritance***
 ```
 defclass( super, ...)( slot, ...);
 
-let Worker = defclass(Chinese, Man)('name', 'age');
-let Secretary = defclass(Chinese, Woman)('name', 'age');
+let Worker = defclass(chinese, man)('name', 'age');
+let Secretary = defclass(chinese, woman)('name', 'age');
 ```
 
 ***Slot-ref***
