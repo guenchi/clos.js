@@ -79,6 +79,15 @@ sam.age;
 > '32'
 ```
 
+***Changing prototype***
+```
+defclass( prototype, ...)( slot, ...);
+
+let Assistant = defclass(lucy)('name', 'age', 'gender');
+let tom = Assistant("tom", 26, 'man');
+let susan = Assistant("susan", 18, 'woman');
+```
+
 ***Generic functions and methods***
 
 ```
@@ -92,8 +101,3 @@ lucy.nation;
 > 'french'
 ```
 
-***Prototype***
-```
-let Assistant = defclass(lucy)('name', 'age');
-let susan = Assistant("susan", 18);
-```
