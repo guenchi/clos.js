@@ -91,3 +91,9 @@ nationChange(lucy, 'french');
 lucy.nation;
 > 'french'
 ```
+
+***Prototype***
+```
+let Assistant = defclass(lucy)('name', 'age');
+let susan = Assistant("susan", 18);
+```
