@@ -24,7 +24,7 @@ The distinction is not merely syntactic: in C++, an action that involves multipl
 
 whereas the CLOS programmer simply writes 
 
-`PutIn(ThisBulb, ThatSocket)` 
+`PutIn(ThisBulb, ThatSocket);` 
 
 In effect, a polymorphic function (called a "generic function" in CLOS terminology) is an ordinary function with multiple definitions, which automatically chooses the most appropriate definition at run time based on the classes of its arguments. No one argument is singled out as "the object" to which the method applies, and there is little need for the C++ construct called a "friend", a function applied to an object of one class which nonetheless has access to the private information of objects of another class.
 
