@@ -53,44 +53,37 @@ make( class, ...)({ key:value, ...});
 ***Creating classes***
 
 ```
-let Gender = defclass()('gender');
-let Nationality = defclass()('nation');
+let Humain = defclass()('name','age','gender')();
+let Work = defclass()('local')();
+let Nationality = defclass()('nationality')();
+```
+
+***Inheritance***
+```
+let Secretary = defclass(Humain, Work)('local')('office');
+let Worker = defclass(Humain, Work)('local')('usine'); 
+let Chinese = defclass(Humain, Nationality)('nationality')('chinese');
 ```
 
 ***Creating instances***
 
 ```
-let man = Gender('man');
-let woman = Gender('woman');
-let chinese = Nationality('chinese');
+let lucy = make(Secretary)({name:'lucy', age:16, gender:'female'});
+let sam = make(Worker, Chinese)({name:'sam', age: 32, gender:'male'});
 ```
 
-***Inheritance***
-```
-defclass( super, ...)( slot, ...);
-
-let Worker = defclass(chinese, man)('name', 'age');
-let Secretary = defclass(chinese, woman)('name', 'age');
-```
 
 ***Slot-ref***
 ```
-let sam = Worker('sam', 32);
-let lucy = Secretary('lucy', 16);
-
 lucy.gender;
-> 'woman'
+> 'female'
 sam.age;
 > '32'
 ```
 
-***Changing prototype***
+***Coping prototype***
 ```
-defclass( prototype, ...)( slot, ...);
-
-let Assistant = defclass(lucy)('name', 'age', 'gender');
-let tom = Assistant("tom", 26, 'man');
-let susan = Assistant("susan", 18, 'woman');
+let susan = make(Chinese, lucy)({name:'susan', age:'18'});
 ```
 
 ***Generic functions and methods***
