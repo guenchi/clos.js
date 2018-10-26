@@ -1,7 +1,7 @@
 # clos.js
 CLOS JavaScript Implementation
 
-# What is CLOS?
+***What is CLOS?***
 
 CLOS, an acronym for Common Lisp Object System, is a standard set of extensions to the Common Lisp language to help people do object-oriented programming in Lisp. 
 
