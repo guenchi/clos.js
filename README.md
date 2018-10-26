@@ -53,7 +53,7 @@ let Nationality = defclass()('nation');
 ***Creating instances***
 
 ```
-class( value, ...);
+Class( value, ...);
 
 let man = Gender('man');
 let woman = Gender('woman');
