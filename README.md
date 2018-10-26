@@ -41,11 +41,18 @@ methods, i.e. how various functions are implemented when applied to objects in t
 and possibly other things like class or pool variables which we sha'n't discuss at this point
 
 
+
+***Introduction***
+```
+defclass( super, ...)( slot, ...)( initial, ...);
+
+make( class, ...)({ key:value, ...});
+```
+
+
 ***Creating classes***
 
 ```
-defclass()( slot, ...);
-
 let Gender = defclass()('gender');
 let Nationality = defclass()('nation');
 ```
@@ -53,8 +60,6 @@ let Nationality = defclass()('nation');
 ***Creating instances***
 
 ```
-Class( value, ...);
-
 let man = Gender('man');
 let woman = Gender('woman');
 let chinese = Nationality('chinese');
