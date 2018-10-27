@@ -45,6 +45,8 @@ and possibly other things like class or pool variables which we sha'n't discuss 
 ***Creating classes***
 
 ```
+make()( slot, ...)( init, ...);
+
 let Humain = make()('name','age','gender')();
 let Work = make()('local')();
 let Nationality = make()('nationality')();
@@ -52,6 +54,8 @@ let Nationality = make()('nationality')();
 
 ***Inheritance***
 ```
+make( super, ...)( slot, ...)( init, ...);
+
 let Worker = make(Humain, Work)('local')('usine'); 
 let Secretary = make(Humain, Work)('local')('office');
 let Chinese = make(Humain, Nationality)('nationality')('chinese');
@@ -60,7 +64,15 @@ let Chinese = make(Humain, Nationality)('nationality')('chinese');
 ***Creating instances***
 
 ```
+make( class, ...)( slot, ...)( value, ...);
+
 let lucy = make(Secretary)('name', 'age', 'gender')('lucy', 16, 'female');
+```
+
+***Creating sets***
+```
+make( class, ...)( slot, ...);
+
 let workers = make(Worker, Chinese)('name', 'age', 'gender');
 let tom = workers('tom', 25, 'male');
 let sam = workers('sam', 32, 'male');
@@ -68,6 +80,8 @@ let sam = workers('sam', 32, 'male');
 
 ***Coping prototype***
 ```
+make( prototype, ...)( slot, ...)( value, ...);
+
 let susan = make(Chinese, lucy)('name', 'age')('susan', 18);
 ```
 
