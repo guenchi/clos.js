@@ -49,7 +49,6 @@ make()( slot, ...)( init, ...);
 
 let Humain = make()('name','age','gender')();
 let Work = make()('local')();
-let Nationality = make()('nationality')();
 ```
 
 ***Inheritance***
@@ -58,7 +57,6 @@ make( class, ...)( slot, ...)( init, ...);
 
 let Worker = make(Humain, Work)('local')('usine'); 
 let Secretary = make(Humain, Work)('local')('office');
-let Chinese = make(Humain, Nationality)('nationality')('chinese');
 ```
 
 ***Creating instances***
@@ -73,7 +71,10 @@ let lucy = make(Secretary)('name', 'age', 'gender')('lucy', 16, 'female');
 ```
 make( class, ...)( slot, ...);
 
-let workers = make(Worker, Chinese)('name', 'age', 'gender');
+let Race = make(Humain)('nationality');
+let Chinese = Race('chinese');
+let French = Race('french');
+let workers = make(Worker, French)('name', 'age', 'gender');
 let tom = workers('tom', 25, 'male');
 let sam = workers('sam', 32, 'male');
 ```
