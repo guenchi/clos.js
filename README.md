@@ -45,7 +45,7 @@ and possibly other things like class or pool variables which we sha'n't discuss 
 ***Creating classes***
 
 ```
-make()( slot, ...)( init, ...);
+make()(slot, ...)(init, ...)
 
 let Humain = make()('name','age','gender')();
 let Work = make()('local')();
@@ -53,7 +53,7 @@ let Work = make()('local')();
 
 ***Inheritance***
 ```
-make( class, ...)( slot, ...)( init, ...);
+make(class, ...)(slot, ...)(init, ...)
 
 let Worker = make(Humain, Work)('local')('usine'); 
 let Secretary = make(Humain, Work)('local')('office');
@@ -62,14 +62,14 @@ let Secretary = make(Humain, Work)('local')('office');
 ***Creating instances***
 
 ```
-make( class, ...)( slot, ...)( value, ...);
+make(class, ...)(slot, ...)(value, ...)
 
 let lucy = make(Secretary)('name', 'age', 'gender')('lucy', 16, 'female');
 ```
 
 ***Creating sets***
 ```
-make( class, ...)( slot, ...);
+make(class, ...)(slot, ...)
 
 let Race = make(Humain)('nationality');
 let Chinese = Race('chinese');
@@ -81,19 +81,28 @@ let sam = workers('sam', 32, 'male');
 
 ***Coping prototype***
 ```
-make( prototype, ...)( slot, ...)( value, ...);
+make(prototype, ...)(slot, ...)(value, ...)
 
 let susan = make(Chinese, lucy)('name', 'age')('susan', 18);
 ```
 
 ***Slot-ref***
 ```
-lucy.gender;
+slotref(object, slot) or object.slot
+
+slotref(lucy, 'gender');
 > 'female'
 sam.age;
 > '32'
 ```
 
+***Slot-set***
+```
+slotset(object, slot, value) or object.slot = value
+
+slotset(lucy, 'age', 17);
+sam.nationality = chinese;
+```
 
 ***Generic functions and methods***
 
