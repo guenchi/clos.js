@@ -54,7 +54,7 @@ let Nationality = make()('nationality')();
 
 ***Inheritance***
 ```
-make( super, ...)( slot, ...)( init, ...);
+make( class, ...)( slot, ...)( init, ...);
 
 let Worker = make(Humain, Work)('local')('usine'); 
 let Secretary = make(Humain, Work)('local')('office');
