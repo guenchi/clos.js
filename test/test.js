@@ -1,9 +1,5 @@
 
-let clos = require('clos.js');
-
-let make = clos.make;
-let slotref = clos.slotref;
-let slotset = clos.slotset;
+const {make, slotref, slotset} = require('clos.js');
 
 
 let Humain = make()('name','age','gender')();
