@@ -42,36 +42,34 @@ and possibly other things like class or pool variables which we sha'n't discuss 
 
 
 
-***Introduction***
-```
-defclass( super, ...)( slot, ...)( initial, ...);
-
-make( class, ...)({ key:value, ...});
-```
-
-
 ***Creating classes***
 
 ```
-let Humain = defclass()('name','age','gender')();
-let Work = defclass()('local')();
-let Nationality = defclass()('nationality')();
+let Humain = make()('name','age','gender')();
+let Work = make()('local')();
+let Nationality = make()('nationality')();
 ```
 
 ***Inheritance***
 ```
-let Secretary = defclass(Humain, Work)('local')('office');
-let Worker = defclass(Humain, Work)('local')('usine'); 
-let Chinese = defclass(Humain, Nationality)('nationality')('chinese');
+let Worker = make(Humain, Work)('local')('usine'); 
+let Secretary = make(Humain, Work)('local')('office');
+let Chinese = make(Humain, Nationality)('nationality')('chinese');
 ```
 
 ***Creating instances***
 
 ```
-let lucy = make(Secretary)({name:'lucy', age:16, gender:'female'});
-let sam = make(Worker, Chinese)({name:'sam', age: 32, gender:'male'});
+let lucy = make(Secretary)('name', 'age', 'gender')('lucy', 16, 'female');
+let workers = make(Worker, Chinese)('name', 'age', 'gender');
+let tom = workers('tom', 25, 'male');
+let sam = workers('sam', 32, 'male');
 ```
 
+***Coping prototype***
+```
+let susan = make(Chinese, lucy)('name', 'age')('susan', 18);
+```
 
 ***Slot-ref***
 ```
@@ -81,10 +79,6 @@ sam.age;
 > '32'
 ```
 
-***Coping prototype***
-```
-let susan = make(Chinese, lucy)({name:'susan', age:'18'});
-```
 
 ***Generic functions and methods***
 
