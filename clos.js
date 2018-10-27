@@ -10,3 +10,7 @@ let make = (...s) => (...k) => (...v) => {
     }
     return o;
 }
+
+let slotref = (o, k) => o[k];
+
+let slotset = (o, k, v) => o[k] = v;
