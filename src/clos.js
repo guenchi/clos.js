@@ -1,5 +1,7 @@
 
-let make = (...s) => (...k) => (...v) => {
+'use strict'
+
+exports.make = (...s) => (...k) => (...v) => {
     let o = {};
     const l = k.length;
     for(let i in s) {
@@ -11,6 +13,7 @@ let make = (...s) => (...k) => (...v) => {
     return o;
 }
 
-let slotref = (o, k) => o[k];
+exports.slotref = (o, k) => o[k];
 
-let slotset = (o, k, v) => o[k] = v;
+exports.slotset = (o, k, v) => o[k] = v;
+
