@@ -1,5 +1,5 @@
 
-let defclass = (...s) => (...k) => (...v) => {
+let make = (...s) => (...k) => (...v) => {
     let o = {};
     const l = k.length;
     for(let i in s) {
@@ -9,12 +9,4 @@ let defclass = (...s) => (...k) => (...v) => {
         o[k[i]]=v[i];
     }
     return o;
-}
-
-let make = (...s) => (v) => {
-    let o = {};
-    for(let i in s) {
-        Object.assign(o, s[i]);
-    }
-    return ({...o, ...v});
 }
